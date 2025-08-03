@@ -1,28 +1,27 @@
 # 📦 GestionStockFLD
 
-Application web de **gestion de stock** développée en **PHP/MySQL (PDO)**.
+**GestionStockFLD** est une application web de **gestion de stock** développée en **PHP/MySQL (PDO)**, permettant de gérer produits, catégories, clients, commandes et utilisateurs avec un système d’authentification et de rôles.
 
 ---
 
-## 🎯 Objectif du projet
-Mettre en place une application permettant de gérer :
-- Les **produits**
-- Les **catégories**
-- Les **clients**
-- Les **commandes** (avec produits et quantités)
-- Les **utilisateurs** (admin et employés, avec système de validation)
+## 🚀 Objectifs
+
+- Gérer les **produits**, **catégories**, **clients** et **commandes**.
+- Mettre en place une **authentification sécurisée** avec rôles (**admin** et **employé**).
+- Offrir une interface simple et fonctionnelle pour la gestion de stock.
 
 ---
 
-## 🛠 Technologies utilisées
-- **PHP** (PDO pour la connexion MySQL)
-- **MySQL**
-- **Bootstrap 5**
-- **HTML / CSS / JS**
+## 🛠️ Technologies
+
+- **PHP** – Backend
+- **MySQL** – Stockage des données
+- **Bootstrap 5** – Interface responsive
+- **HTML / CSS / JavaScript** – Frontend
 
 ---
 
-## 📁 Structure du projet
+## 📂 Structure du projet
 
 ```bash
 gestionStockFLD
@@ -85,40 +84,42 @@ gestionStockFLD
 ├── index.php               # Page d'accueil
 └── README.md
 ```
+
 ---
-# 🔑 Fonctionnalités
 
-## **Authentification**
-- Login sécurisé (mot de passe haché)
-- Système de rôles (**admin** et **employé**)
+## 🔑 Fonctionnalités
+
+### **Authentification**
+- Connexion sécurisée (mot de passe haché)
 - Inscription avec validation par l’administrateur
+- Système de rôles : **admin** et **employé**
 
-## **Gestion des utilisateurs**
-- Admin : création / suppression des comptes
-- Liste des utilisateurs actifs avec rôle et statut
+### **Gestion des utilisateurs**
+- Création, suppression et affichage des utilisateurs
+- Gestion des rôles et statuts
 
-## **Gestion des produits**
-- Ajouter / modifier / supprimer
-- Upload sécurisé d’image
+### **Gestion des produits**
+- CRUD complet
+- Upload sécurisé d’images (pas encore implémenté !)
 - Association à une catégorie
 
-## **Gestion des catégories**
-- Ajouter / modifier / supprimer
+### **Gestion des catégories**
+- Ajouter, modifier et supprimer des catégories
 
-## **Gestion des clients**
-- Ajouter / modifier / supprimer
-- Upload photo
+### **Gestion des clients**
+- CRUD complet
+- Upload de photo ((pas encore implémenté !))
 - Recherche par nom, email ou téléphone
 
-## **Gestion des commandes**
-- Associer une commande à un client
-- Sélection de produits avec quantité
+### **Gestion des commandes**
+- Association d’une commande à un client
+- Sélection de produits avec quantités
 - Mise à jour automatique du stock
 - Consultation détaillée des commandes
 
 ---
 
-# 🗄 Base de données
+## 🗄️ Base de données
 
 Tables principales :
 1. **utilisateur** (id, nom, email, mot_de_passe, rôle, statut)
@@ -128,33 +129,22 @@ Tables principales :
 5. **commande** (id, idClient, dateCommande)
 6. **commande_produit** (idCommande, idProduit, quantite)
 
-Importez `flddatabse.sql` pour créer la structure complète :
-
-```bash
-mysql -u root -p gestionStockFLD < flddatabse.sql
-```
-
----
-
----
-# 🚀 Installation
-
-## Cloner le projet
-```bash
-git clone <url-du-repo>
-cd gestionStockFLD
-```
-
-Créer la base de données
+Créer la base :
 ```bash
 mysql -u root -p -e "CREATE DATABASE gestionStockFLD;"
-```
-
-```bash
 mysql -u root -p gestionStockFLD < flddatabse.sql
 ```
 
-Configurer la connexion dans includes/db.php
+---
+
+## ⚙️ Installation
+
+1. **Cloner le projet**
+```bash
+git clone https://github.com/wahabsoumare/Gestion-Commande.git
+```
+
+2. **Configurer la connexion à la BDD** dans `includes/db.php` :
 ```php
 $host = 'localhost';
 $dbname = 'gestionStockFLD';
@@ -162,43 +152,30 @@ $username = 'root';
 $password = '';
 ```
 
-Lancer le serveur
+3. **Lancer le serveur PHP**
 ```bash
 php -S localhost:8000
 ```
-Puis accéder à : http://localhost:8000
+Puis accéder à : [http://localhost:8000](http://localhost:8000)
 
 ---
 
----
-👥 Comptes de test
-Admin
-Email : wahab@email.com
+## 👥 Comptes de test
 
-Mot de passe : wahab123
+**Admin**  
+- Email : `wahab@email.com`  
+- Mot de passe : `wahab123`
 
-Employé
-Email : pathe@email.com
-
-Mot de passe : pathe123
+**Employé**  
+- Email : `pathe@email.com`  
+- Mot de passe : `pathe123`
 
 ---
 
----
+## 📜 Licence
 
-📜 Licence
-Ce projet est distribué sous une licence à usage académique uniquement.
-Vous êtes autorisé à :
-
-Utiliser et modifier ce code pour des projets éducatifs ou personnels.
-
-Partager ce projet à des fins pédagogiques.
-
-Vous n’êtes pas autorisé à :
-
-Utiliser ce projet à des fins commerciales.
-
-Redistribuer ce projet sans mention de l’auteur original.
+Projet distribué sous **licence académique** :  
+- **Autorisé** : utilisation/modification pour projets éducatifs ou personnels, partage à des fins pédagogiques.  
+- **Interdit** : usage commercial, redistribution sans mention de l’auteur.  
 
 © 2025 - Abdoul Wahab Soumare - Projet académique
----
